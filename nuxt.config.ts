@@ -1,3 +1,5 @@
+import Aura from '@primevue/themes/aura'
+
 import { DEFAULT_LOCALE, LOCALE_LABELS }	from './i18n.config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -23,6 +25,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		'@nuxt/test-utils/module',
 		'@nuxtjs/i18n',
+		'@primevue/nuxt-module',
 	],
 
 	i18n: {
@@ -38,6 +41,14 @@ export default defineNuxtConfig({
 				indent: 'tab',
 				quotes: 'single',
 				semi: false,
+			},
+		},
+	},
+
+	primevue: {
+		options: {
+			theme: {
+				preset: Aura,
 			},
 		},
 	},
