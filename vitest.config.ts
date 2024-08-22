@@ -7,4 +7,9 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: ['./test/vitest/setup.config.ts'],
   },
+  resolve: {
+    alias: {
+      '@': '/',
+    },
+  },
 })
