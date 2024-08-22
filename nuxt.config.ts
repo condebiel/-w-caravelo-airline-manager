@@ -16,7 +16,10 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/styles/base.css'],
+  css: [
+    'primeicons/primeicons.css',
+    '~/assets/styles/base.css',
+  ],
 
   devtools: { enabled: true },
 
