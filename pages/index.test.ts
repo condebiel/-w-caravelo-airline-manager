@@ -1,23 +1,26 @@
 import { describe, it, expect } from 'vitest'
-import { render } from '@testing-library/vue'
-import { mount } from '@vue/test-utils'
+import { fireEvent } from '@testing-library/vue'
 
 import Index from './index.vue'
+import { render } from '@/test/testUtils'
 
-describe('Given an Index component tested with vue-test-utils', () => {
-  describe('When it\'s mounted', () => {
-    it('Then renders H1 text properly', () => {
-      const wrapper = mount(Index)
-      expect(wrapper.text()).toContain('Nuxt3 Boilerplate')
-    })
-  })
-})
-
-describe('Given an Index component tested with testing-library', () => {
+describe('Given the Index page component', () => {
   describe('When it\'s mounted', () => {
     it('Then renders H1 text properly', () => {
       const { getByText } = render(Index)
-      expect(getByText('This is a simple Nuxt3 Boilerplate')).toBeInTheDocument()
+
+      expect(getByText('Client Profile')).toBeInTheDocument()
+    })
+  })
+
+  describe('When user click Edit Flight button', () => {
+    it('Then modal title is visible', async () => {
+      const { getByRole, getByText } = render(Index)
+
+      const button = getByRole('button', { name: 'Edit Flights' })
+      await fireEvent.click(button)
+
+      expect(getByText('bla bla bla')).toBeInTheDocument()
     })
   })
 })
