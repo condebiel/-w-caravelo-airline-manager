@@ -7,10 +7,5 @@
       "@testing-library/vue",
       "vitest"
     ]
-  },
-  "include": [
-    "./test/vitest/setup.config.ts",
-    "./**/*.vue",
-  ],
-  "exclude": ["dist", "node_modules"]
+  }
 }
