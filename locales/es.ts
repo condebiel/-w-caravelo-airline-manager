@@ -1,5 +1,5 @@
 export default {
-	profile: {
-		name: 'Nombre',
-	},
+  profile: {
+    name: 'Nombre',
+  },
 }
