@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^8.5.0",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },
