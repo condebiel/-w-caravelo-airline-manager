@@ -13,7 +13,7 @@ const {
 } = defineProps<TextInputProps>()
 
 const attrs = useAttrs()
-const modelValue = defineModel<string>()
+const modelValue = defineModel<string | number>()
 </script>
 
 <template>

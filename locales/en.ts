@@ -10,4 +10,10 @@ export default {
     repository: 'Github',
     editFlights: 'Edit Flights',
   },
+  editFlights: {
+    title: 'Edit Profile',
+    quotaLabel: 'Flights Left',
+    reasonLabel: 'What is the motive?',
+    reasonPlaceholder: 'Please, chose a reason',
+  },
 }
