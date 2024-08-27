@@ -1,5 +1,6 @@
 import { render as VTLrender } from '@testing-library/vue'
 import type { RenderOptions } from '@testing-library/vue'
+import { vi } from 'vitest'
 import { createI18n } from 'vue-i18n'
 
 import { DEFAULT_LOCALE } from '@/i18n.config'
@@ -14,6 +15,9 @@ export const i18n = createI18n({
     es: localesES,
   },
 })
+
+// Mocking $fetch to prevent warnings
+vi.stubGlobal('$fetch', () => vi.fn())
 
 export function render(component: unknown, options?: RenderOptions<unknown>) {
   const defaultOptions = {
