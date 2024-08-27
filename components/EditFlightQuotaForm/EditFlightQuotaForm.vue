@@ -4,6 +4,7 @@ import { useField, useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import * as zod from 'zod'
 import { useI18n } from 'vue-i18n'
+import { push as pushNotification } from 'notivue'
 
 import Button from 'primevue/button'
 import Select from 'primevue/select'
@@ -44,6 +45,7 @@ const onSubmit = handleSubmit(async (values) => {
     emit(EVENT_TOGGLE_MODAL)
   } catch (error) {
     handleError(error)
+    pushNotification.error(t('genericError'))
   }
 })
 
@@ -76,6 +78,7 @@ async function fetchInitialData() {
     quota.value = data.quota
   } catch (error) {
     handleError(error)
+    pushNotification.error(t('genericError'))
     emit(EVENT_TOGGLE_MODAL)
   }
 }

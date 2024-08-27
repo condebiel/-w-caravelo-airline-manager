@@ -4,7 +4,7 @@ import { DEFAULT_LOCALE, LOCALE_LABELS } from './i18n.config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-08-20',
+  compatibilityDate: '2024-08-27',
 
   app: {
     head: {

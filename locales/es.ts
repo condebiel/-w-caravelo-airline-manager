@@ -28,4 +28,5 @@ export default {
     remove8: 'La suscripción no se renovó correctamente',
     remove9: 'Otro',
   },
+  genericError: 'Algo ha ido mal. Por favor, vuelve a intentarlo.',
 }

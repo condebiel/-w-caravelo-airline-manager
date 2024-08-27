@@ -28,4 +28,5 @@ export default {
     remove8: 'Subscription has not renewed correctly',
     remove9: 'Other',
   },
+  genericError: 'Something went wrong. \n\rPlease try again.',
 }
