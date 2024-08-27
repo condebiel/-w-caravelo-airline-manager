@@ -7,6 +7,7 @@ import localesEN from '@/locales/en'
 import localesES from '@/locales/es'
 
 export const i18n = createI18n({
+  legacy: false,
   locale: DEFAULT_LOCALE,
   messages: {
     en: localesEN,
