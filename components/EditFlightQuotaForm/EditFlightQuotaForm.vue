@@ -8,10 +8,12 @@ import { useI18n } from 'vue-i18n'
 import Button from 'primevue/button'
 import Select from 'primevue/select'
 
+import { useErrorHandler } from '@/composables/useErrorHandler'
 import { useFlightQuota } from '@/composables/useFlightQuota'
 import TextInput from '@/components/TextInput/TextInput.vue'
 
 const { t } = useI18n()
+const { handleError } = useErrorHandler()
 const { getFlightQuota, updateFlightQuota } = useFlightQuota()
 
 const emit = defineEmits<{
@@ -41,7 +43,7 @@ const onSubmit = handleSubmit(async (values) => {
     await updateFlightQuota({ ...values })
     emit(EVENT_TOGGLE_MODAL)
   } catch (error) {
-    console.log('Error updating flight quota: ', error)
+    handleError(error)
   }
 })
 
@@ -73,7 +75,7 @@ async function fetchInitialData() {
     const data = await getFlightQuota()
     quota.value = data.quota
   } catch (error) {
-    console.log('Error fetching flight quota: ', error)
+    handleError(error)
     emit(EVENT_TOGGLE_MODAL)
   }
 }
