@@ -21,9 +21,12 @@ export default defineNuxtConfig({
     '~/assets/styles/base.css',
   ],
 
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
 
   modules: [
+    '@vee-validate/nuxt',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
     '@nuxt/test-utils/module',
