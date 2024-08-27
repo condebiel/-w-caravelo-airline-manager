@@ -20,7 +20,7 @@ describe('Given the Index page component', () => {
       const button = getByRole('button', { name: 'Edit Flights' })
       await fireEvent.click(button)
 
-      expect(getByText('bla bla bla')).toBeInTheDocument()
+      expect(getByText('Edit Profile')).toBeInTheDocument()
     })
   })
 })

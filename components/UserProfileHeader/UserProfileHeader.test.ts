@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest'
 
+import { fireEvent } from '@testing-library/vue'
 import UserProfileHeader from './UserProfileHeader.vue'
+
 import { render } from '@/test/testUtils'
 
 describe('Given the UserProfileHeader page component', () => {
@@ -12,13 +14,13 @@ describe('Given the UserProfileHeader page component', () => {
     })
   })
 
-  describe('When user click Edit Flight button', () => {
-    it('Then toggle-modal event is emmited', () => {
-      const { getByText, emitted } = render(UserProfileHeader)
+  describe('When user click on Edit Flight button', () => {
+    it('Then modal is rendered and user can see the modal title', async () => {
+      const { getByText } = render(UserProfileHeader)
 
-      getByText('Edit Flights').click()
+      await fireEvent.click(getByText('Edit Flights'))
 
-      expect(emitted()).toHaveProperty('toggle-modal')
+      expect(getByText('Edit Profile')).toBeInTheDocument()
     })
   })
 })

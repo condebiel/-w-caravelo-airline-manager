@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import Button from 'primevue/button'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const emit = defineEmits<{
-  (evt: 'toggle-modal', data: string[]): void
-}>()
+import Button from 'primevue/button'
+import Dialog from 'primevue/dialog'
+
+import EditFlightQuotaForm from '@/components/EditFlightQuotaForm/EditFlightQuotaForm.vue'
+
+const { t } = useI18n()
+
+const isModalVisible = ref(false)
 
 function toggleModal() {
-  emit('toggle-modal')
+  isModalVisible.value = !isModalVisible.value
 }
 </script>
 
@@ -19,18 +25,28 @@ function toggleModal() {
     "
   >
     <h1 class="text-2xl font-bold text-gray-900">
-      {{ $t('profile.title') }}
+      {{ t('profile.title') }}
     </h1>
 
     <div class="text-right">
       <Button
         class="flex w-auto"
-        :label="$t('profile.editFlights')"
+        :label="t('profile.editFlights')"
         severity="secondary"
         icon="pi pi-pencil"
         outlined
         @click="toggleModal"
       />
     </div>
+
+    <Dialog
+      v-model:visible="isModalVisible"
+      modal
+      :header="t('editFlights.title')"
+      dismissable-mask
+      :style="{ width: '50rem' }"
+    >
+      <EditFlightQuotaForm @toggle-modal="toggleModal" />
+    </Dialog>
   </div>
 </template>
