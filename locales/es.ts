@@ -1,5 +1,31 @@
 export default {
   profile: {
+    title: 'Perfil del Cliente',
     name: 'Nombre',
+    surname: 'Apellido',
+    email: 'Correo Electrónico',
+    address: 'Dirección',
+    city: 'Ciudad',
+    birthdate: 'Fecha de Nacimiento',
+    repository: 'Github',
+    editFlights: 'Editar Vuelos',
+  },
+  editFlights: {
+    title: 'Editar Perfil',
+    quotaLabel: 'Vuelos Restantes',
+    reasonLabel: '¿Cuál es el motivo?',
+    reasonPlaceholder: 'Por favor, elige un motivo',
+    saveButton: 'Guardar Cambios',
+  },
+  reasonOptions: {
+    add0: 'El suscriptor canceló el vuelo',
+    add1: 'La aerolínea canceló el vuelo',
+    add2: 'Compensación al cliente',
+    add3: 'Otro',
+    remove5: 'Vuelo no reembolsado después de la cancelación del vuelo',
+    remove6: 'El suscriptor tuvo problemas con el inicio de sesión o la contraseña',
+    remove7: 'El suscriptor tuvo problemas al hacer la reserva',
+    remove8: 'La suscripción no se renovó correctamente',
+    remove9: 'Otro',
   },
 }

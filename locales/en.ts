@@ -15,5 +15,17 @@ export default {
     quotaLabel: 'Flights Left',
     reasonLabel: 'What is the motive?',
     reasonPlaceholder: 'Please, chose a reason',
+    saveButton: 'Save Changes',
+  },
+  reasonOptions: {
+    add0: 'Subscriber canceled flight',
+    add1: 'Airline canceled flight',
+    add2: 'Customer compensation',
+    add3: 'Other',
+    remove5: 'Flight not redeposited after a flight cancellation',
+    remove6: 'Subscriber had log in or password issues',
+    remove7: 'Subscriber had issues when booking',
+    remove8: 'Subscription has not renewed correctly',
+    remove9: 'Other',
   },
 }

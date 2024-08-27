@@ -47,18 +47,18 @@ const onSubmit = handleSubmit(async (values) => {
 
 // Options for the reason select dropdown based on quota action (add/remove)
 const addOptions = [
-  { value: 0, label: 'Subscriber canceled flight' },
-  { value: 1, label: 'Airline canceled flight' },
-  { value: 2, label: 'Customer compensation' },
-  { value: 3, label: 'Other' },
+  { value: 0, label: t('reasonOptions.add0') },
+  { value: 1, label: t('reasonOptions.add1') },
+  { value: 2, label: t('reasonOptions.add2') },
+  { value: 3, label: t('reasonOptions.add3') },
 ]
 
 const removeOptions = [
-  { value: 5, label: 'Flight not redeposited after a flight cancellation' },
-  { value: 6, label: 'Subscriber had log in or password issues' },
-  { value: 7, label: 'Subscriber had issues when booking' },
-  { value: 8, label: 'Subscription has not renewed correctly' },
-  { value: 9, label: 'Other' },
+  { value: 5, label: t('reasonOptions.remove5') },
+  { value: 6, label: t('reasonOptions.remove6') },
+  { value: 7, label: t('reasonOptions.remove7') },
+  { value: 8, label: t('reasonOptions.remove8') },
+  { value: 9, label: t('reasonOptions.remove9') },
 ]
 
 const reasonOptions = ref()
@@ -176,7 +176,6 @@ watch(quota, (newValue, oldValue) => {
           :placeholder="t('editFlights.reasonPlaceholder')"
           option-label="label"
           option-value="value"
-          label="What is the reason?"
           class="rounded border-solid border-1 mt-4 border-gray-900 p-2"
         />
       </label>
@@ -185,7 +184,7 @@ watch(quota, (newValue, oldValue) => {
     <!-- Save Button -->
     <Button
       type="submit"
-      label="Save Changes"
+      :label="t('editFlights.saveButton')"
       class="self-center"
       :disabled="!isFormValid"
     />
