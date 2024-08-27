@@ -15,7 +15,7 @@ export default withNuxt(
       /**
        * style
        */
-      'style/brace-style': 'off',
+      '@stylistic/brace-style': 'off',
       /**
        * typescript-eslint
        */
