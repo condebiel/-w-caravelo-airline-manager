@@ -19,6 +19,8 @@ export default defineNuxtConfig({
   css: [
     'primeicons/primeicons.css',
     '~/assets/styles/base.css',
+    'notivue/notification.css',
+    'notivue/animations.css',
   ],
 
   devtools: {
@@ -32,6 +34,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxtjs/i18n',
     '@primevue/nuxt-module',
+    'notivue/nuxt',
   ],
 
   i18n: {
@@ -58,6 +61,18 @@ export default defineNuxtConfig({
         options: {
           darkModeSelector: '',
         },
+      },
+    },
+  },
+
+  notivue: {
+    position: 'bottom-right',
+    limit: 4,
+    enqueue: true,
+    avoidDuplicates: false,
+    notifications: {
+      global: {
+        duration: 5000,
       },
     },
   },
